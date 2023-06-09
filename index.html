@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let count = Number(prompt("How many times do you want to play ?"))
+
+
+    console.log(getComputerChoice(count))
+
+    function getComputerChoice( count )
+    {
+
+        let playerscore =0
+        let computerscore =0
+        for(let i =0; i < count; i ++){
+            let playerselection = prompt("Enter your move")
+            let computerselection = prompt("Enter computer move")
+
+            if(playerselection === "rock" && computerselection === "paper" || playerselection === "scissor" && 
+             computerselection === "paper" || playerselection === "rock" && computerselection === "scissor" )
+
+            {
+                console.log("Scored by player")
+                playerscore = playerscore + 1
+
+            }
+            else if(playerselection === "paper" && computerselection === "rock" || playerselection === "paper" && 
+             computerselection === "scissor" || playerselection === "scissor" && computerselection === "rock" )
+            {
+            console.log("Scored by computer")
+            computerscore = computerscore + 1
+            }
+
+            else{
+                console.log("Tie")
+            }
+
+        }
+        if (playerscore > computerscore)
+{
+    return "player score is " + playerscore
+}
+else if(playerscore === computerscore){
+    return "Its a tie"
+}
+else{
+    "computer score is " + computerscore
+}
+
+    }
+    </script>
+</body>
+</html>
